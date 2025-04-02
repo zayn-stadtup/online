@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body><div id="header-placeholder"></div>
+
+<main class="article-page">
+<h1>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</h1>
+<p class="meta">25.03.31 · Dailycity</p>
+<div class="article-content">
+<h2>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</h2>
+<p>최근 발생한 &lt;2025년 의성-안동 산불&gt;은 50명 이상의 인명피해를 일으킨 사상 최악의 산불로 기록되고 있는데요. 주불 진화가 완료되고 이틀이 지난 오늘, 이철우 경북도지사는 이재민 지원 대책의 일환으로 희망자 전원에게 ‘모듈러 주택’을 공급하라는 지시를 내렸습니다. 이는 지난 28일 발표한 ‘산불대응 5대 추진방향’에도 포함된 임시 거주용 조립주택 공급 방안을 다시금 강조한 맥락이죠.</p>
+<p>모듈러 주택이란 공장에서 사전 제작된 단위 건물, 즉 모듈을 현장에서 조립하여 완성하는 주택을 말하는데요. 이 모듈러 주택은 건축 과정의 특성 상 짧은 건축 소요 시간과 높은 이동 편의성으로 빠르고 간편하게 공급이 가능하다는 장점이 있습니다. 따라서 모듈러 주택은 이번 재난과 같이 긴급한 사안에 빠른 일상 회복을 도울 수 있는 대책으로도 큰 기대를 받고 있죠.</p>
+<p>이철우 지사의 모듈러 주택 공급 결정은 피해 주민들의 신속한 일상 회복에 중요한 첫걸음이라고 해도 좋을 것 같습니다. 다만 꽃샘 추위가 여전한 지금, 모듈러 주택의 부족한 단열 성능, 그리고 설치 및 철거 비용이 큰 모듈러 건축의 한계점을 어떻게 관리할 것인지 등 여러 당면 문제에 대한 구체적인 계획도 필요해 보여요. 향후 정부와 경북도가 보다 상세한 실행 계획을 마련하고 이재민들이 안정적인 일상을 되찾을 수 있도록 관심 있게 지켜보아야겠습니다.</p>
+<p class="source">
+<strong>사진 출처</strong><br/>
+1. 경상북도청. (2025, 3월 28). 경북도, 초고속 회복을 위한 산불대응 5대 추진방향 발표. <a href="https://www.gb.go.kr/Main/page.do?mnu_uid=6792&amp;BD_CODE=bbs_bodo&amp;cmd=2&amp;B_NUM=502894301&amp;B_STEP=502894300"></a><br/>
+2. 황지현. (2025, 3월 30). 산불 피해 이재민 위한 선제적 긴급 주거지원 총력! 모듈러주택 100동, 임시주거용 조립주택 26동 신속 이동‧설치. 대구뉴스. <a href="http://www.dailydgnews.com/news/article.html?no=212322"></a><br/>
+3. Lu, J. (2020, September 10). Whatever happened to... the instant hospitals built for COVID-19 patients in Wuhan? NPR. <a href="https://www.npr.org/sections/goatsandsoda/2020/09/10/909688913/whatever-happened-to-the-instant-hospitals-built-in-wuhan-for-covid-19-patients"></a>
+</p>
+</div>
+</main>
+
+
+<div id="footer-placeholder"></div>
+<script>
+  async function includeHTML() {
+    try {
+      const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+      const header = await fetch(base + "header.html").then(res => res.text());
+      document.getElementById("header-placeholder").innerHTML = header;
+
+      const footer = await fetch(base + "footer.html").then(res => res.text());
+      document.getElementById("footer-placeholder").innerHTML = footer;
+    } catch (e) {
+      console.error("헤더 또는 푸터 로딩 실패:", e);
+    }
+  }
+  includeHTML();
+
+  function toggleMenu() {
+    const nav = document.querySelector('#navbar ul');
+    if (nav) nav.classList.toggle('active');
+  }
+</script>
+</body>
+</html>

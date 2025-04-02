@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>dailycity</title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <h2>dailycity 게시판</h2>
+    <div class="card-container">
+      <a class="card" href="article1.html">
+        <img src="img2.jpg" />
+        <div class="text">
+          <h3>155년 만의 귀환, 종묘 정전과 환완제</h3>
+          <p class="meta">25.04.01 · Dailycity</p>
+        </div>
+      </a>
+      <a class="card" href="article2.html">
+        <img src="img1.jpg" />
+        <div class="text">
+          <h3>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</h3>
+          <p class="meta">25.03.31 · Dailycity</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function includeHTML() {
+      try {
+        const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+        const header = await fetch(base + "header.html").then(res => res.text());
+        document.getElementById("header-placeholder").innerHTML = header;
+
+        const footer = await fetch(base + "footer.html").then(res => res.text());
+        document.getElementById("footer-placeholder").innerHTML = footer;
+      } catch (e) {
+        console.error("헤더 또는 푸터 로딩 실패:", e);
+      }
+    }
+    includeHTML();
+
+    function toggleMenu() {
+      const nav = document.querySelector('#navbar ul');
+      if (nav) nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>dailycity</title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <h2>주간도시</h2>
+    <div class="card-container">
+      <a class="card" href="article3.html">
+        <img src="img3.jpg" />
+        <div class="text">
+          <h3>🌱선유도공원, 👟걷는 재미가 다른 이유</h3>
+          <p class="meta">25.03.27 · 주간도시</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function includeHTML() {
+      try {
+        const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+        const header = await fetch(base + "header.html").then(res => res.text());
+        document.getElementById("header-placeholder").innerHTML = header;
+
+        const footer = await fetch(base + "footer.html").then(res => res.text());
+        document.getElementById("footer-placeholder").innerHTML = footer;
+      } catch (e) {
+        console.error("헤더 또는 푸터 로딩 실패:", e);
+      }
+    }
+    includeHTML();
+
+    function toggleMenu() {
+      const nav = document.querySelector('#navbar ul');
+      if (nav) nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
