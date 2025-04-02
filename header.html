@@ -46,18 +46,21 @@
   }
 
   nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    background: #457B5B;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 999;
+    display: none;
   }
 
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
+  nav ul.active {
+    display: flex;
   }
+}
 
   nav ul li a:hover {
     text-decoration: underline;
