@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>what we do | StadtUP</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      line-height: 1.7;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5rem;
+      color: #333;
+    }
+    p {
+      margin: 1rem 0;
+      color: #444;
+    }
+    strong {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main>
+    <h2>우리가 그리는 도시 이야기</h2>
+    <p>도시공간 혁신 크루 <strong>슈타트업 StadtUP</strong>은 매일 걷는 골목길부터 세계의 도시까지, 우리의 일상이 펼쳐지는 모든 도시 공간에는 저마다의 이야기가 숨쉬고 있습니다. 출근길에 스쳐 지나는 오래된 건물, 주말 나들이로 향하는 새로운 핫플레이스, 도시재생으로 변화하는 동네의 풍경까지. 주간도시는 이러한 도시공간의 숨은 가치와 매력을 발견하고 공유합니다.</p>
+
+    <h2>도시를 읽는 방법</h2>
+    <p><strong>매주 목요일 정오,</strong> 도시를 바라보는 새로운 시선 <strong>&lt;주간도시 週刊都市&gt;</strong>를 전해드립니다. &lt;주간도시&gt;는 도시의 흥미로운 이야기, 매력적인 장소, 시의성 있는 이슈와 트렌드를 소개합니다. 우리가 살아가는 도시 공간 하나하나가 지닌 특별한 의미를 함께 발견해가는 여정에 동참해주세요.</p>
+
+    <h2>직접 걸으며 만나는 도시</h2>
+    <p><strong>🚶‍♂️골목길로 소셜링</strong>을 통해 도시를 더 가까이서 만납니다. 매주 주말, 서울 곳곳의 골목을 함께 걸으며 <strong>도시 인문학 산책</strong>을 진행합니다. 전문 크리에이터와 함께 도시의 역사, 문화, 건축, 그리고 그 안에 담긴 사람들의 이야기를 나눕니다. 황학동의 오래된 정취, 망원동의 변화하는 풍경, 해방촌의 건축 이야기까지, 발걸음마다 새로운 도시의 매력을 발견할 수 있습니다.</p>
+
+    <h2>도시를 바라보는 우리의 시선</h2>
+    <p>슈타트업 StadtUP은 도시공간이 단순한 물리적 환경이 아닌, <strong>우리 삶과 문화가 녹아있는 생생한 이야기의 장</strong>이라고 믿습니다. 일하고, 쉬고, 놀고, 사랑하는 모든 순간이 펼쳐지는 도시공간. 그 속에 담긴 가치 있는 이야기들을 발견하고 나누며, 도시를 사랑하는 모든 시민들과 함께 성장해나가고자 합니다.</p>
+    <p>함께 도시의 새로운 이야기를 써내려 갈 여러분을 기다립니다.</p>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    async function includeHTML() {
+      try {
+        const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+        const header = await fetch(base + "header.html").then(res => res.text());
+        document.getElementById("header-placeholder").innerHTML = header;
+
+        const footer = await fetch(base + "footer.html").then(res => res.text());
+        document.getElementById("footer-placeholder").innerHTML = footer;
+      } catch (e) {
+        console.error("헤더 또는 푸터 로딩 실패:", e);
+      }
+    }
+    includeHTML();
+  </script>
+</body>
+</html>
