@@ -54,16 +54,21 @@
 
       const footer = await fetch(base + "footer.html").then(res => res.text());
       document.getElementById("footer-placeholder").innerHTML = footer;
+
+      // ✅ 헤더가 삽입된 후에 토글 기능 연결
+      const toggleBtn = document.querySelector('.menu-toggle');
+      const navList = document.querySelector('#navbar ul');
+      if (toggleBtn && navList) {
+        toggleBtn.addEventListener('click', () => {
+          navList.classList.toggle('active');
+        });
+      }
+
     } catch (e) {
       console.error("헤더 또는 푸터 로딩 실패:", e);
     }
   }
   includeHTML();
-
-  function toggleMenu() {
-    const nav = document.querySelector('#navbar ul');
-    if (nav) nav.classList.toggle('active');
-  }
 </script>
 </body>
 </html>
