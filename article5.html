@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이제 청년안심주택에서 반려동물이랑 같이 살 수 있다고? 서울의 작지만 확실한 변화 둘러보기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="article-page">
+    <h1>이제 청년안심주택에서 반려동물이랑 같이 살 수 있다고? 서울의 작지만 확실한 변화 둘러보기</h1>
+    <p class="meta">25.04.08 · Dailycity</p>
+
+    <div class="article-content">
+      <h2>서울의 규제개선, 생활 속 작지만 확실한 변화들</h2>
+      <p>서울시가 시민들의 불편을 줄이고 경제 활동을 돕기 위해 규제 10건을 추가로 없애기로 했습니다. 올해 1월부터 지금까지 서울시는 총 113건의 규제를 완화하거나 철폐했는데요. 과연 어떤 변화가 있었을까요?</p>
+
+      <h3>✅ 주요 내용 요약</h3>
+      <ul>
+        <li><strong>청년안심주택, 반려동물과 함께</strong>: 기존에는 입주자 전원의 동의가 있어야 반려동물 사육이 가능했지만, 이제 그 제한이 사라졌습니다. 다만, 공동주택 특성상 다른 입주자에게 피해가 발생할 경우에는 입주자와 관리주체의 동의를 받아 조치할 계획입니다.</li>
+        <li><strong>장애인의 보금자리 지키기</strong>: 장애인 자립생활주택의 최대 거주 기간이 4년에서 6년으로 연장되어 보다 안정적인 정착이 가능해졌습니다.</li>
+        <li><strong>주택가 주차문제, 이제 해결</strong>: 공동주택 주차장을 주차장 확보 비율에서 제외해 더 많은 주차장 조성이 가능해졌습니다.</li>
+        <p>서울시는 '작지만 확실한 변화'를 위해 노력한다고 합니다. 거창한 변화만큼이나, 일상에서 겪는 작은 불편을 해결하는 것도 삶의 만족도를 높일 수 있기 때문입니다. 앞으로도 불합리한 규제들이 개선되었으면 합니다.</p>
+      </ul>
+
+      <h3>🔍 더 자세히 보기: 서울시 규제 철폐안 10건</h3>
+      <ol>
+        <li><strong>청년안심주택 내 반려동물 동반 입주 허용</strong><br/>
+        → 입주자 전원 동의 없이도 반려동물 입주 가능. 주거 선택권 확대.</li>
+        <li><strong>공공시설 기부채납 인센티브 개선</strong><br/>
+        → 설계비·감리비 포함, 사업성 향상.</li>
+        <li><strong>설계공모 디지털 전환 의무화</strong><br/>
+        → 종이·모형 대신 100% 디지털 심사. 환경 보호 및 효율성 제고.</li>
+        <li><strong>여성발전센터 창업보육센터 입주 조건 완화</strong><br/>
+        → 창업 2~3년 → 7년 이내로 완화. 성장 스타트업 지원.</li>
+        <li><strong>화물운수종사자 교육 방식 전면 개편</strong><br/>
+        → 오프라인 → 모바일(VOD) 전환. 유연한 교육 환경.</li>
+        <li><strong>소규모 지출 집행 시 서류 간소화</strong><br/>
+        → 300만원 이하 ‘산출기초조사서’ 생략. 행정 부담 감소.</li>
+        <li><strong>공간정보 제공 시 보안SW 설치 의무 폐지</strong><br/>
+        → 암호화 파일 제공 방식으로 전환. 오류·불편 최소화.</li>
+        <li><strong>지방세 체납자 신용정보 제공 일시 해제</strong><br/>
+        → 일부 납부·분납계획 시 1년간 등록 해제. 금융 접근성 제고.</li>
+        <li><strong>장애인 자립생활주택 거주기간 연장</strong><br/>
+        → 4년 → 6년. 지역 정착 기반 강화.</li>
+        <li><strong>공동주택 주차장 조성사업 지원 기준 완화</strong><br/>
+        → '아파트' → '공동주택' 전체 제외로 기준 확대.</li>
+      </ol>
+
+     
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function includeHTML() {
+      try {
+        const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+        const header = await fetch(base + "header.html").then(res => res.text());
+        document.getElementById("header-placeholder").innerHTML = header;
+
+        const footer = await fetch(base + "footer.html").then(res => res.text());
+        document.getElementById("footer-placeholder").innerHTML = footer;
+      } catch (e) {
+        console.error("헤더 또는 푸터 로딩 실패:", e);
+      }
+    }
+    includeHTML();
+
+    function toggleMenu() {
+      const nav = document.querySelector('#navbar ul');
+      if (nav) nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
