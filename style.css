@@ -1,3 +1,13 @@
+/* 기본 레이아웃 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #222;
+}
+
 /* === 헤더 스타일 시작 === */
 
 /* 상단바 (녹색 배경 영역) */
@@ -18,7 +28,6 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
-  /* 로고의 크기나 여백 등 추가 조정이 필요하면 여기에 추가 */
   margin: 0; /* 기본 마진 제거 */
 }
 
@@ -55,14 +64,13 @@
   text-decoration: underline; /* 마우스 올리면 밑줄 */
 }
 
-/* 구독 링크 특별 스타일 (이전 스타일 유지) */
+/* 구독 링크 특별 스타일 */
 #navbar ul li a.subscribe-link {
   font-weight: bold;
   padding: 0.4rem 0.9rem;
   border: 1px solid white;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  /* margin-left 제거 또는 조정 (gap으로 간격 조절) */
 }
 
 #navbar ul li a.subscribe-link:hover {
@@ -85,8 +93,186 @@
 /* === 헤더 스타일 끝 === */
 
 
+/* 카드 레이아웃 */
+main {
+  padding: 2rem;
+}
+
+main h2 { /* 둘러보기 제목 스타일 추가 */
+    padding: 1rem 2rem;
+    margin: 0 0 2rem 0; /* 위/좌우 0, 아래 2rem 마진 */
+    font-size: 1.8rem; /* 제목 크기 키움 */
+    border-bottom: 1px solid #eee; /* 아래 구분선 */
+}
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  display: flex; /* 이미지와 텍스트 영역 분리 위해 추가 */
+  flex-direction: column; /* 세로 배치 */
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .text { /* 텍스트 영역 그룹화 */
+  padding: 1rem;
+  flex-grow: 1; /* 남는 공간 채우도록 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 제목/메타 정보 간격 벌리기 */
+}
+
+.card h3 {
+  margin: 0 0 0.5rem 0; /* 위/좌/우 0, 아래 0.5rem 마진 */
+  font-size: 1.1rem;
+}
+
+.card .meta {
+  margin: 0; /* 기본 마진 제거 */
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto; /* 메타 정보 아래로 밀기 */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background: #f5f5f5;
+  color: #888;
+  margin-top: 3rem; /* 메인 콘텐츠와 간격 */
+}
+
+
+/* === 팝업 관련 스타일 시작 === */
+
+/* 팝업 모달 기본 스타일 (숨김 상태) */
+.popup-modal {
+  display: none; /* 초기에는 숨김 */
+  position: fixed; /* 화면에 고정 */
+  z-index: 1000; /* 다른 요소들 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 내용 많을 경우 스크롤 */
+  background-color: rgba(0, 0, 0, 0.6); /* 반투명 검은색 배경 */
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+}
+
+/* 팝업 표시 상태 */
+.popup-modal.active {
+  display: flex; /* flex로 변경하여 중앙 정렬 적용 */
+}
+
+/* 팝업 내용 박스 */
+.popup-content {
+  background-color: #fff;
+  margin: auto; /* 중앙 배치 (flex 없을 경우 대비) */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px; /* 최대 너비 설정 */
+  width: 90%; /* 모바일 고려한 너비 */
+  position: relative; /* 닫기 버튼 위치 기준 */
+  text-align: center;
+}
+
+/* 닫기 버튼 */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+/* 팝업 내 제목 */
+.popup-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #457B5B; /* 헤더 색상과 통일 */
+}
+
+/* 팝업 내 본문 텍스트 */
+.popup-content p {
+  margin-bottom: 25px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* 팝업 내 구독 버튼 */
+.popup-subscribe-button {
+  display: inline-block;
+  background-color: #457B5B; /* 주요 색상 사용 */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popup-subscribe-button:hover {
+  background-color: #3a684c; /* 호버 시 약간 어둡게 */
+}
+/* === 팝업 관련 스타일 끝 === */
+
+
 /* === 모바일 반응형 스타일 시작 === */
+
+@media (max-width: 1024px) {
+  /* 태블릿 화면에서 카드 2열 */
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  /* --- 모바일 헤더 --- */
+  .top-bar {
+    padding: 0.8rem 1.5rem; /* 모바일에서 헤더 패딩 약간 줄이기 */
+  }
+
+  .logo {
+    font-size: 1.3rem; /* 모바일 로고 크기 조정 */
+  }
 
   /* 모바일에서는 토글 버튼 보이기 */
   .menu-toggle {
@@ -103,7 +289,7 @@
     left: 0;
     width: 100%;
     background-color: #457B5B; /* 배경색 유지 */
-    padding: 1rem 2rem; /* 안쪽 여백 */
+    padding: 1rem 1.5rem; /* 모바일 메뉴 패딩 */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 약간의 그림자 효과 */
     z-index: 999; /* 다른 요소 위에 오도록 */
     gap: 1rem; /* 세로 메뉴 항목 간격 */
@@ -120,6 +306,41 @@
     margin-top: 0; /* 위쪽 여백 제거 (gap으로 처리) */
     margin-left: 0; /* 왼쪽 여백 제거 */
     width: auto; /* 너비 자동으로 */
+    padding: 0.5rem 1rem; /* 모바일 버튼 패딩 조정 */
   }
+
+  /* --- 모바일 카드 --- */
+  main {
+    padding: 1.5rem; /* 모바일에서 메인 패딩 줄이기 */
+  }
+
+   main h2 {
+    padding: 1rem 1.5rem; /* 모바일 제목 패딩 */
+    font-size: 1.5rem; /* 모바일 제목 크기 */
+  }
+
+  /* 모바일 화면에서 카드 1열 */
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* 모바일 카드 간격 */
+  }
+
+  /* --- 모바일 팝업 --- */
+   .popup-content {
+     padding: 25px; /* 모바일 팝업 패딩 */
+     width: 90%;
+   }
+   .popup-content h2 {
+     font-size: 1.3rem; /* 모바일 팝업 제목 크기 */
+   }
+   .popup-content p {
+     font-size: 0.95rem; /* 모바일 팝업 텍스트 크기 */
+   }
+   .popup-subscribe-button {
+     padding: 10px 20px; /* 모바일 팝업 버튼 패딩 */
+     font-size: 0.95rem;
+   }
+
+
 }
 /* === 모바일 반응형 스타일 끝 === */
