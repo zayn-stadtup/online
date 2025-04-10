@@ -166,14 +166,27 @@
     </ul>
 
 </main>
+ <div id="footer-placeholder"></div>
 
-{/* 푸터 로드 위치 */}
-<div id="footer-placeholder"></div>
+  <script>
+    async function includeHTML() {
+      try {
+        const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+        const header = await fetch(base + "header.html").then(res => res.text());
+        document.getElementById("header-placeholder").innerHTML = header;
 
-{/* 팝업 HTML은 이 페이지에 불필요하므로 포함하지 않음 */}
+        const footer = await fetch(base + "footer.html").then(res => res.text());
+        document.getElementById("footer-placeholder").innerHTML = footer;
+      } catch (e) {
+        console.error("헤더 또는 푸터 로딩 실패:", e);
+      }
+    }
+    includeHTML();
 
-{/* 공통 스크립트 로드 */}
-<script src="script.js"></script>
-
+    function toggleMenu() {
+      const nav = document.querySelector('#navbar ul');
+      if (nav) nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
