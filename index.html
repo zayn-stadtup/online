@@ -98,5 +98,71 @@
 
   includeHTML();
 </script>
+<!-- 구독 안내 팝업 -->
+<div id="subscribe-popup" class="popup-modal">
+  <div class="popup-content">
+    <button class="popup-close" aria-label="닫기">&times;</button>
+    <h2>주간도시 소식, 놓치지 마세요!</h2>
+    <p>도시의 최신 이슈와 깊이 있는 분석을 매주 이메일로 받아보세요. 지금 바로 구독하고 도시 전문가의 시각을 넓혀보세요.</p>
+    <a href="https://weeklycity.stibee.com" target="_blank" rel="noopener noreferrer" class="popup-subscribe-button">지금 구독하기</a>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('subscribe-popup');
+  // popup 요소가 페이지에 실제로 존재하는지 확인 후 진행
+  if (popup) {
+    const closeButton = popup.querySelector('.popup-close');
+    const subscribeButton = popup.querySelector('.popup-subscribe-button'); // 구독 버튼도 선택
+
+    // 팝업을 표시하는 함수
+    const showPopup = () => {
+      popup.classList.add('active');
+    };
+
+    // 팝업을 숨기는 함수
+    const hidePopup = () => {
+      popup.classList.remove('active');
+    };
+
+    // --- 팝업 표시 로직 ---
+    // 예시: 페이지 로드 후 3초 뒤에 팝업 표시 (세션당 한 번만)
+    const popupShown = sessionStorage.getItem('subscribePopupShown');
+    if (!popupShown) {
+      setTimeout(() => {
+        showPopup();
+        sessionStorage.setItem('subscribePopupShown', 'true'); // 세션 스토리지에 기록
+      }, 3000); // 3000ms = 3초
+    }
+
+    // --- 팝업 닫기 로직 ---
+    // 닫기 버튼 클릭 시
+    if (closeButton) {
+      closeButton.addEventListener('click', hidePopup);
+    }
+
+    // 팝업 외부(배경 오버레이) 클릭 시
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) { // 클릭된 요소가 배경 자체일 때만 닫기
+        hidePopup();
+      }
+    });
+
+    // ESC 키 누르면 닫기 (접근성 향상)
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && popup.classList.contains('active')) {
+        hidePopup();
+      }
+    });
+
+    // 구독 버튼 클릭 시 (새 탭으로 링크가 열리므로 팝업을 닫을 필요는 없을 수 있음)
+    // 필요하다면 아래 주석 해제
+    // if (subscribeButton) {
+    //   subscribeButton.addEventListener('click', hidePopup);
+    // }
+  } // if (popup) 끝
+});
+</script>
 </body>
 </html>
