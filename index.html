@@ -1,104 +1,100 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>StadtUP</title>
-<link href="style.css" rel="stylesheet"/>
-   <li><a href="https://weeklycity.stibee.com" target="_blank" rel="noopener noreferrer" class="subscribe-link">구독하기</a></li>
-
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>StadtUP</title>
+    <!-- Noto Sans KR 폰트 로드 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 스타일시트 연결 (style.css 파일이 같은 폴더에 있어야 함) -->
+    <link href="style.css" rel="stylesheet"/>
 </head>
-<body><div id="header-placeholder"></div>
+<body>
+
+<!-- === 헤더 시작 === -->
+<header class="top-bar">
+    <a href="index.html" class="logo">StadtUP co.</a> {/* 로고 클릭 시 메인 페이지로 이동하도록 링크 수정 */}
+
+    <button class="menu-toggle" aria-label="메뉴 열기">☰</button> {/* 모바일 메뉴 버튼 */}
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">둘러보기</a></li> {/* 예시: 다른 메뉴 항목 */}
+            {/* 다른 메뉴 항목이 있다면 여기에 추가하세요 */}
+            {/* <li><a href="about.html">소개</a></li> */}
+
+            {/* '구독' 링크 - 이제 ul 태그 안에 올바르게 위치합니다 */}
+            <li><a href="https://weeklycity.stibee.com" target="_blank" rel="noopener noreferrer" class="subscribe-link">구독</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- === 헤더 끝 === -->
 
 <main>
-<h2 style="padding: 1rem 2rem;">둘러보기</h2>
-<div class="card-container">
-   <a class="card" href="article7.html">
-<img alt="대구 염색산단" src="250409_w_3.jpeg"/>
-<div class="text">
-<h3>🌸 예쁜 줄만 알았죠? 도시를 지키는 🌳 가로수의 비밀</h3>
-<p class="meta">25.04.10 · 주간도시</p>
-</div>
-</a>
-   <a class="card" href="article6.html">
-<img alt="대구 염색산단" src="250409dailydaegu.jpeg"/>
-<div class="text">
-<h3>숨 쉬기 편해진 대구 염색산단, 악취 72% 감소</h3>
-<p class="meta">25.04.09 · Dailycity</p>
-</div>
-</a>
-  <a class="card" href="article5.html">
-<img alt="서울시 규제 철폐" src="img_250409_1.jpg"/>
-<div class="text">
-<h3>이제 청년안심주택에서 반려동물이랑 같이 살 수 있다고? 서울의 작지만 확실한 변화 둘러보기</h3>
-<p class="meta">25.04.09 · Dailycity</p>
-</div>
-</a>
-  <a class="card" href="article4.html">
-    <img alt="모듈러 주택" src="m1.jpg" />
-    <div class="text">
-      <h3>🏠모듈러 주택, 🧩도시를 '조립'하는 새로운 방법</h3>
-      <p class="meta">2025.04.03 · 주간도시</p>
+    <h2 style="padding: 1rem 2rem;">둘러보기</h2>
+    <div class="card-container">
+       <a class="card" href="article7.html">
+            <img alt="가로수 이미지" src="250409_w_3.jpeg"/> {/* 이미지 alt 속성 수정 */}
+            <div class="text">
+                <h3>🌸 예쁜 줄만 알았죠? 도시를 지키는 🌳 가로수의 비밀</h3>
+                <p class="meta">25.04.10 · 주간도시</p>
+            </div>
+        </a>
+       <a class="card" href="article6.html">
+            <img alt="대구 염색산단" src="250409dailydaegu.jpeg"/>
+            <div class="text">
+                <h3>숨 쉬기 편해진 대구 염색산단, 악취 72% 감소</h3>
+                <p class="meta">25.04.09 · Dailycity</p>
+            </div>
+        </a>
+        <a class="card" href="article5.html">
+            <img alt="서울시 청년안심주택" src="img_250409_1.jpg"/> {/* 이미지 alt 속성 수정 */}
+            <div class="text">
+                <h3>이제 청년안심주택에서 반려동물이랑 같이 살 수 있다고? 서울의 작지만 확실한 변화 둘러보기</h3>
+                <p class="meta">25.04.09 · Dailycity</p>
+            </div>
+        </a>
+        <a class="card" href="article4.html">
+            <img alt="모듈러 주택" src="m1.jpg" />
+            <div class="text">
+              <h3>🏠모듈러 주택, 🧩도시를 '조립'하는 새로운 방법</h3>
+              <p class="meta">2025.04.03 · 주간도시</p>
+            </div>
+        </a>
+        <a class="card" href="article1.html">
+            <img alt="종묘 환완제" src="img2.jpg"/>
+            <div class="text">
+                <h3>155년 만의 귀환, 종묘 정전과 환완제</h3>
+                <p class="meta">25.04.01 · Dailycity</p>
+            </div>
+        </a>
+        <a class="card" href="article2.html">
+            <img alt="모듈러 주택 건설 현장" src="img1.jpg"/> {/* 이미지 alt 속성 수정 */}
+            <div class="text">
+                <h3>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</h3>
+                <p class="meta">25.03.31 · Dailycity</p>
+            </div>
+        </a>
+        <a class="card" href="article3.html">
+            <img alt="선유도공원" src="img3.jpg"/>
+            <div class="text">
+                <h3>🌱선유도공원, 👟걷는 재미가 다른 이유</h3>
+                <p class="meta">25.03.27 · 주간도시</p>
+            </div>
+        </a>
     </div>
-  </a>  
-<a class="card" href="article1.html">
-<img alt="종묘 환완제" src="img2.jpg"/>
-<div class="text">
-<h3>155년 만의 귀환, 종묘 정전과 환완제</h3>
-<p class="meta">25.04.01 · Dailycity</p>
-</div>
-</a>
-<a class="card" href="article2.html">
-<img alt="모듈러 주택" src="img1.jpg"/>
-<div class="text">
-<h3>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</h3>
-<p class="meta">25.03.31 · Dailycity</p>
-</div>
-</a>
-<a class="card" href="article3.html">
-<img alt="선유도공원" src="img3.jpg"/>
-<div class="text">
-<h3>🌱선유도공원, 👟걷는 재미가 다른 이유</h3>
-<p class="meta">25.03.27 · 주간도시</p>
-</div>
-</a>
-</div>
 </main>
 
+<!-- === 푸터 시작 === -->
+<footer>
+    <p>© 2025 StadtUP. All rights reserved.</p>
+    {/* 필요한 푸터 내용을 여기에 추가하세요 */}
+</footer>
+<!-- === 푸터 끝 === -->
 
-<div id="footer-placeholder"></div>
-<script>
-  async function includeHTML() {
-    try {
-      const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
-      const header = await fetch(base + "header.html").then(res => res.text());
-      document.getElementById("header-placeholder").innerHTML = header;
-
-      const footer = await fetch(base + "footer.html").then(res => res.text());
-      document.getElementById("footer-placeholder").innerHTML = footer;
-
-      // ✅ 헤더가 DOM에 삽입된 후에 토글 이벤트 바인딩
-      setTimeout(() => {
-        const toggleBtn = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('#navbar ul');
-        if (toggleBtn && navList) {
-          toggleBtn.addEventListener('click', () => {
-            navList.classList.toggle('active');
-          });
-        } else {
-          console.warn("토글 요소가 안 잡힘");
-        }
-      }, 100); // 헤더 삽입 이후 DOM 안정 시간 확보
-
-    } catch (e) {
-      console.error("헤더 또는 푸터 로딩 실패:", e);
-    }
-  }
-
-  includeHTML();
-</script>
-<!-- 구독 안내 팝업 -->
+<!-- === 구독 안내 팝업 HTML 시작 === -->
 <div id="subscribe-popup" class="popup-modal">
   <div class="popup-content">
     <button class="popup-close" aria-label="닫기">&times;</button>
@@ -107,62 +103,69 @@
     <a href="https://weeklycity.stibee.com" target="_blank" rel="noopener noreferrer" class="popup-subscribe-button">지금 구독하기</a>
   </div>
 </div>
+<!-- === 구독 안내 팝업 HTML 끝 === -->
 
+
+<!-- === JavaScript 시작 === -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const popup = document.getElementById('subscribe-popup');
-  // popup 요소가 페이지에 실제로 존재하는지 확인 후 진행
-  if (popup) {
-    const closeButton = popup.querySelector('.popup-close');
-    const subscribeButton = popup.querySelector('.popup-subscribe-button'); // 구독 버튼도 선택
+    // --- 모바일 메뉴 토글 로직 ---
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('#navbar ul');
 
-    // 팝업을 표시하는 함수
-    const showPopup = () => {
-      popup.classList.add('active');
-    };
-
-    // 팝업을 숨기는 함수
-    const hidePopup = () => {
-      popup.classList.remove('active');
-    };
-
-    // --- 팝업 표시 로직 ---
-    // 예시: 페이지 로드 후 3초 뒤에 팝업 표시 (세션당 한 번만)
-    const popupShown = sessionStorage.getItem('subscribePopupShown');
-    if (!popupShown) {
-      setTimeout(() => {
-        showPopup();
-        sessionStorage.setItem('subscribePopupShown', 'true'); // 세션 스토리지에 기록
-      }, 3000); // 3000ms = 3초
+    if (toggleBtn && navList) {
+        toggleBtn.addEventListener('click', () => {
+            navList.classList.toggle('active'); // CSS에서 정의된 .active 클래스를 토글
+        });
     }
 
-    // --- 팝업 닫기 로직 ---
-    // 닫기 버튼 클릭 시
-    if (closeButton) {
-      closeButton.addEventListener('click', hidePopup);
-    }
+    // --- 구독 팝업 로직 ---
+    const popup = document.getElementById('subscribe-popup');
 
-    // 팝업 외부(배경 오버레이) 클릭 시
-    popup.addEventListener('click', (event) => {
-      if (event.target === popup) { // 클릭된 요소가 배경 자체일 때만 닫기
-        hidePopup();
-      }
-    });
+    if (popup) { // 팝업 요소가 페이지에 있는지 확인 후 진행
+        const closeButton = popup.querySelector('.popup-close');
 
-    // ESC 키 누르면 닫기 (접근성 향상)
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && popup.classList.contains('active')) {
-        hidePopup();
-      }
-    });
+        // 팝업 표시 함수
+        const showPopup = () => {
+            popup.classList.add('active'); // CSS에서 정의된 .active 클래스 추가
+        };
 
-    // 구독 버튼 클릭 시 (새 탭으로 링크가 열리므로 팝업을 닫을 필요는 없을 수 있음)
-    // 필요하다면 아래 주석 해제
-    // if (subscribeButton) {
-    //   subscribeButton.addEventListener('click', hidePopup);
-    // }
-  } // if (popup) 끝
+        // 팝업 숨김 함수
+        const hidePopup = () => {
+            popup.classList.remove('active'); // .active 클래스 제거
+        };
+
+        // 표시 로직: 페이지 로드 후 3초 뒤, 세션당 한 번만
+        const popupShown = sessionStorage.getItem('subscribePopupShown');
+        if (!popupShown) {
+            setTimeout(() => {
+                showPopup();
+                sessionStorage.setItem('subscribePopupShown', 'true');
+            }, 3000); // 3초 딜레이
+        }
+
+        // 닫기 로직: 닫기 버튼 클릭 시
+        if (closeButton) {
+            closeButton.addEventListener('click', hidePopup);
+        }
+
+        // 닫기 로직: 팝업 외부(배경) 클릭 시
+        popup.addEventListener('click', (event) => {
+            if (event.target === popup) { // 클릭된 요소가 배경 자체일 때만
+                hidePopup();
+            }
+        });
+
+        // 닫기 로직: ESC 키 누를 시
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && popup.classList.contains('active')) {
+                hidePopup();
+            }
+        });
+    } // if (popup) 끝
 });
 </script>
+<!-- === JavaScript 끝 === -->
+
 </body>
 </html>
