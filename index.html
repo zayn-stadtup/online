@@ -15,17 +15,12 @@
 
 <!-- === 헤더 시작 === -->
 <header class="top-bar">
-    <a href="index.html" class="logo">StadtUP co.</a> {/* 로고 클릭 시 메인 페이지로 이동하도록 링크 수정 */}
-
-    <button class="menu-toggle" aria-label="메뉴 열기">☰</button> {/* 모바일 메뉴 버튼 */}
-
+    <a href="index.html" class="logo">StadtUP co.</a>
+    <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
     <nav id="navbar">
         <ul>
-            <li><a href="index.html">둘러보기</a></li> {/* 예시: 다른 메뉴 항목 */}
-            {/* 다른 메뉴 항목이 있다면 여기에 추가하세요 */}
-            {/* <li><a href="about.html">소개</a></li> */}
-
-            {/* '구독' 링크 - 이제 ul 태그 안에 올바르게 위치합니다 */}
+            <li><a href="index.html">둘러보기</a></li>
+            <!-- 다른 메뉴 항목이 있다면 여기에 <li><a href="...">...</a></li> 형태로 추가하세요 -->
             <li><a href="https://weeklycity.stibee.com" target="_blank" rel="noopener noreferrer" class="subscribe-link">구독</a></li>
         </ul>
     </nav>
@@ -36,7 +31,7 @@
     <h2 style="padding: 1rem 2rem;">둘러보기</h2>
     <div class="card-container">
        <a class="card" href="article7.html">
-            <img alt="가로수 이미지" src="250409_w_3.jpeg"/> {/* 이미지 alt 속성 수정 */}
+            <img alt="가로수 이미지" src="250409_w_3.jpeg"/>
             <div class="text">
                 <h3>🌸 예쁜 줄만 알았죠? 도시를 지키는 🌳 가로수의 비밀</h3>
                 <p class="meta">25.04.10 · 주간도시</p>
@@ -50,7 +45,7 @@
             </div>
         </a>
         <a class="card" href="article5.html">
-            <img alt="서울시 청년안심주택" src="img_250409_1.jpg"/> {/* 이미지 alt 속성 수정 */}
+            <img alt="서울시 청년안심주택" src="img_250409_1.jpg"/>
             <div class="text">
                 <h3>이제 청년안심주택에서 반려동물이랑 같이 살 수 있다고? 서울의 작지만 확실한 변화 둘러보기</h3>
                 <p class="meta">25.04.09 · Dailycity</p>
@@ -71,7 +66,7 @@
             </div>
         </a>
         <a class="card" href="article2.html">
-            <img alt="모듈러 주택 건설 현장" src="img1.jpg"/> {/* 이미지 alt 속성 수정 */}
+            <img alt="모듈러 주택 건설 현장" src="img1.jpg"/>
             <div class="text">
                 <h3>재난 복구의 첫걸음, 모듈러 주택의 가능성과 한계</h3>
                 <p class="meta">25.03.31 · Dailycity</p>
@@ -90,7 +85,7 @@
 <!-- === 푸터 시작 === -->
 <footer>
     <p>© 2025 StadtUP. All rights reserved.</p>
-    {/* 필요한 푸터 내용을 여기에 추가하세요 */}
+    <!-- 필요한 푸터 내용을 여기에 추가하세요 -->
 </footer>
 <!-- === 푸터 끝 === -->
 
@@ -115,54 +110,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (toggleBtn && navList) {
         toggleBtn.addEventListener('click', () => {
-            navList.classList.toggle('active'); // CSS에서 정의된 .active 클래스를 토글
+            navList.classList.toggle('active');
         });
     }
 
     // --- 구독 팝업 로직 ---
     const popup = document.getElementById('subscribe-popup');
 
-    if (popup) { // 팝업 요소가 페이지에 있는지 확인 후 진행
+    if (popup) {
         const closeButton = popup.querySelector('.popup-close');
 
-        // 팝업 표시 함수
         const showPopup = () => {
-            popup.classList.add('active'); // CSS에서 정의된 .active 클래스 추가
+            popup.classList.add('active');
         };
 
-        // 팝업 숨김 함수
         const hidePopup = () => {
-            popup.classList.remove('active'); // .active 클래스 제거
+            popup.classList.remove('active');
         };
 
-        // 표시 로직: 페이지 로드 후 3초 뒤, 세션당 한 번만
         const popupShown = sessionStorage.getItem('subscribePopupShown');
         if (!popupShown) {
             setTimeout(() => {
                 showPopup();
                 sessionStorage.setItem('subscribePopupShown', 'true');
-            }, 3000); // 3초 딜레이
+            }, 3000);
         }
 
-        // 닫기 로직: 닫기 버튼 클릭 시
         if (closeButton) {
             closeButton.addEventListener('click', hidePopup);
         }
 
-        // 닫기 로직: 팝업 외부(배경) 클릭 시
         popup.addEventListener('click', (event) => {
-            if (event.target === popup) { // 클릭된 요소가 배경 자체일 때만
+            if (event.target === popup) {
                 hidePopup();
             }
         });
 
-        // 닫기 로직: ESC 키 누를 시
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && popup.classList.contains('active')) {
                 hidePopup();
             }
         });
-    } // if (popup) 끝
+    }
 });
 </script>
 <!-- === JavaScript 끝 === -->
