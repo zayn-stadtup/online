@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet"/>
 </head>
+    <div id="header-placeholder"></div>
 <body>
 
 <div id="header-placeholder"></div>
@@ -47,6 +48,21 @@
 <div id="footer-placeholder"></div>
 
 <script src="script.js"></script>
+<div id="footer-placeholder"></div>
+<script>
+  async function includeHTML() {
+    try {
+      const base = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+      const header = await fetch(base + "header.html").then(res => res.text());
+      document.getElementById("header-placeholder").innerHTML = header;
 
+      const footer = await fetch(base + "footer.html").then(res => res.text());
+      document.getElementById("footer-placeholder").innerHTML = footer;
+    } catch (e) {
+      console.error("헤더 또는 푸터 로딩 실패:", e);
+    }
+  }
+  includeHTML();
+</script>
 </body>
 </html>
